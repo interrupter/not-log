@@ -1,6 +1,6 @@
 {
     "name": "not-log",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "not-* family module for share loggin interface in not- environment",
     "main": "index.js",
     "scripts": {
@@ -26,16 +26,17 @@
     "homepage": "https://github.com/interrupter/not-log#readme",
     "dependencies": {
         "winston": "*",
-        "winston-daily-rotate-file": "*",
-        "not-config": "*"
+        "winston-daily-rotate-file": "*"
     },
     "devDependencies": {
         "chai": "*",
         "chai-as-promised": "*",
+        "chai-files": "^1.4.0",
         "eslint": "*",
         "ink-docstrap": "^1.3.2",
         "istanbul": "*",
         "jsdoc": "^3.5.5",
-        "mocha": "*"
+        "mocha": "*",
+        "not-config": "*"
     }
 }
