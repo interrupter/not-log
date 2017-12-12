@@ -1,5 +1,7 @@
 {
-	"log":{
-		"path": "logs/log"
+	"modules":{
+		"log":{
+			"path": "logs/log"
+		}
 	}
 }
