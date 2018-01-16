@@ -30,7 +30,7 @@ var pathToLog = 'log';
 function getLogger(input) {
 	if (typeof input === 'string'){
 		pathToLog = input;
-		return this;
+		return arguments.callee;
 	}else{
 		let transports = [],
 			pathLabel = input.filename.split('/').slice(-2).join('/');
