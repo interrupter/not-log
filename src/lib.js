@@ -40,9 +40,11 @@ function getLogger(input) {
 		}));
 
 		transports.push(new winston.transports.DailyRotateFile({
-			name: 'file',
-			datePattern: '.yyyy-MM-dd',
-			filename: pathToLog,
+			datePattern: 'YYYY-MM-DD',
+			filename: pathToLog + '-%DATE%.log',
+			zippedArchive: true,
+			maxSize: '20m',
+			maxFiles: '90d',
 			level: ENV === 'production' ? 'error' : 'debug',
 			json: true,
 			label: pathLabel

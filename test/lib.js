@@ -1,7 +1,7 @@
 const expect = require("chai").expect,
 	log = require('../index.js'),
 	chai = require('chai'),
-	chaiFiles = require('chai-files'),	
+	chaiFiles = require('chai-files'),
 	path = require('path'),
 	file = chaiFiles.file,
 	dir = chaiFiles.dir,
@@ -11,7 +11,7 @@ const expect = require("chai").expect,
 		.replace('Y', today.getFullYear())
 		.replace('m', today.getMonth()+1)
 		.replace('d', today.getDate()),
-	defaultLogName = 'log.'+strDate;
+	defaultLogName = strDate+'.log';
 
 chai.use(chaiFiles);
 
@@ -22,19 +22,20 @@ before(()=>{
 	}catch(e){}
 });
 
-describe("logger", function() {
+describe("logger", function(done) {
 
 	it("get logger without custom path to log "+defaultLogName, function() {
 		let logger = log(module);
 		logger.info('test');
 		setTimeout(()=>{
 			expect(file(defaultLogName)).to.exist;
+			done();
 		},200);
 	});
 
 	it("init with path to log", function() {
-		let name = path.join(__dirname, 'logs/log');
-		expect(log(name)).to.be.equal(name);
+		let name = path.join(__dirname, 'logs/app');
+		expect(log(name)).to.be.equal(log);
 	});
 
 	it("get logger with config", function() {
