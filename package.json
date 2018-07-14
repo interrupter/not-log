@@ -25,8 +25,8 @@
 	},
 	"homepage": "https://github.com/interrupter/not-log#readme",
 	"dependencies": {
-		"winston": "^2.4.2",
-		"winston-daily-rotate-file": "^3.2.1"
+		"winston": "3.0.0",
+		"winston-daily-rotate-file": "^3.3.0"
 	},
 	"devDependencies": {
 		"chai": "*",

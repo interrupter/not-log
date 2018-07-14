@@ -35,11 +35,11 @@ function getLogger(input) {
 		let transports = [],
 			pathLabel = input.filename.split('/').slice(-2).join('/');
 
-		transports.push(new winston.transports.Console({
+		transports.push(new (winston.transports.Console)({
 			colorize: true
 		}));
 
-		transports.push(new winston.transports.DailyRotateFile({
+		transports.push(new (winston.transports.DailyRotateFile)({
 			datePattern: 'YYYY-MM-DD',
 			filename: pathToLog + '-%DATE%.log',
 			zippedArchive: true,
@@ -50,7 +50,7 @@ function getLogger(input) {
 			label: pathLabel
 		}));
 
-		return new winston.Logger({
+		return winston.createLogger({
 			transports: transports
 		});
 	}
