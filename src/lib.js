@@ -19,7 +19,7 @@ const DailyRotateFile = require('winston-daily-rotate-file');
 /**
 * @member {string} pathToLog path to log file
 */
-var pathToLog = 'log';
+var pathToLog = './logs/log';
 
 /**
  * Returns logger for module
@@ -41,7 +41,7 @@ function getLogger(input) {
 		}));
 
 		transports.push(new DailyRotateFile({
-			datePattern: 'yyyy-MM-dd',
+			datePattern: 'YYYY-MM-DD',
 			filename: pathToLog + '-%DATE%.log',
 			zippedArchive: true,
 			maxSize: '20m',
