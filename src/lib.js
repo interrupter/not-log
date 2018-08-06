@@ -13,7 +13,8 @@ const winston = require('winston');
 */
 const ENV = process.env.NODE_ENV;
 
-require('winston-daily-rotate-file');
+const DailyRotateFile = require('winston-daily-rotate-file');
+
 
 /**
 * @member {string} pathToLog path to log file
@@ -39,8 +40,8 @@ function getLogger(input) {
 			colorize: true
 		}));
 
-		transports.push(new (winston.transports.DailyRotateFile)({
-			datePattern: 'YYYY-MM-DD',
+		transports.push(new DailyRotateFile({
+			datePattern: 'yyyy-MM-dd',
 			filename: pathToLog + '-%DATE%.log',
 			zippedArchive: true,
 			maxSize: '20m',
