@@ -25,7 +25,7 @@
 	},
 	"homepage": "https://github.com/interrupter/not-log#readme",
 	"dependencies": {
-		"winston": "3.0.0"
+		"winston": "*"
 	},
 	"devDependencies": {
 		"chai": "*",
