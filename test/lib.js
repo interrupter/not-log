@@ -23,21 +23,6 @@ before(()=>{
 });
 
 describe("logger", function(done) {
-
-	it("get logger without custom path to log "+defaultLogName, function() {
-		let logger = log(module);
-		logger.info('test');
-		setTimeout(()=>{
-			expect(file(defaultLogName)).to.exist;
-			done();
-		},200);
-	});
-
-	it("init with path to log", function() {
-		let name = path.join(__dirname, 'logs/app');
-		expect(log(name)).to.be.equal(log);
-	});
-
 	it("get logger with config", function() {
 		let logger = log(module);
 		expect(logger.debug('test')).to.not.throw;
