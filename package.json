@@ -1,6 +1,6 @@
 {
 	"name": "not-log",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"description": "not-* family module for share loggin interface in not- environment",
 	"main": "index.js",
 	"scripts": {

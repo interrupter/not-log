@@ -18,12 +18,13 @@ const ENV = process.env.NODE_ENV;
  * @return {object} Winston instance
  */
 function getLogger(input) {
-	transports.push(new (winston.transports.Console)({
-		colorize: true
-	}));
 	return winston.createLogger({
-		transports: transports
+		transports: [
+			new (winston.transports.Console)({
+				colorize: true
+			})
+		]
 	});
 }
 
-module.exports = getLogger;
+module.exports = ()=>{return getLogger;};
