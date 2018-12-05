@@ -17,7 +17,7 @@ const ENV = process.env.NODE_ENV;
  * if string, then it changes pathToLog
  * @return {object} Winston instance
  */
-function getLogger(input) {
+function getLogger() {
 	return winston.createLogger({
 		transports: [
 			new (winston.transports.Console)({
@@ -27,4 +27,4 @@ function getLogger(input) {
 	});
 }
 
-module.exports = ()=>{return getLogger;};
+module.exports = getLogger;
