@@ -56,6 +56,7 @@ function simpleLogger(module, label = ''){
 	breadcrumbs = breadcrumbs.join(' : ');
 	return {
 		log: genLogMsg(breadcrumbs),
+		info: genLogMsg(breadcrumbs),
 		debug: genLogDebug(breadcrumbs),
 		error: genLogError(breadcrumbs),
 	};
