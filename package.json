@@ -1,6 +1,6 @@
 {
 	"name": "not-log",
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"description": "not-* family module for share loggin interface in not- environment",
 	"main": "index.js",
 	"scripts": {
@@ -24,9 +24,7 @@
 		"url": "https://github.com/interrupter/not-log/issues"
 	},
 	"homepage": "https://github.com/interrupter/not-log#readme",
-	"dependencies": {
-		"winston": "*"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"chai": "*",
 		"chai-as-promised": "*",
