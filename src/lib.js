@@ -47,8 +47,8 @@ function genLogError(prefix) {
 	};
 }
 
-function simpleLogger(module, label = ''){
-	let parts = path.parse(module.__filename);
+function simpleLogger(mod, label = ''){
+	let parts = path.parse(mod.filename);
 	let breadcrumbs = [parts.base];
 	if(label && label.length){
 		breadcrumbs.unshift(label);
