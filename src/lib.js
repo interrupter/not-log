@@ -1,7 +1,10 @@
 const path = require('path');
-const DEV_ENV = 'production';
-const ENV_TYPE = process.env.NODE_ENV ? process.env.NODE_ENV : DEV_ENV;
+const DEV_ENV = 'development';
+const DEF_ENV = 'production';
+const ENV_TYPE = process.env.NODE_ENV ? process.env.NODE_ENV : DEF_ENV;
 const NOOP = () => {};
+
+let muted = false;
 
 function pad(n) {
 	return n < 10 ? '0' + n : n;
@@ -48,6 +51,10 @@ function genLogError(prefix) {
 }
 
 function simpleLogger(mod, label = ''){
+	if(arguments.length === 1 && typeof mod === 'boolean'){
+		mute = !mod;
+		return;
+	}
 	let parts = path.parse(mod.filename);
 	let breadcrumbs = [parts.base];
 	if(label && label.length){
