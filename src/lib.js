@@ -24,6 +24,7 @@ function localIsoDate(date) {
 //Генерация метода вывода сообщений в консоль с указанием префикса.
 function genLogMsg(prefix) {
 	return function(){
+		if(muted) return;
 		let now = localIsoDate();
 		// eslint-disable-next-line no-console
 		console.log(`[${now}]: ${prefix}::`, ...arguments);
@@ -44,6 +45,7 @@ function genLogDebug(prefix) {
 
 function genLogError(prefix) {
 	return function(){
+		if(muted) return;
 		let now = localIsoDate();
 		// eslint-disable-next-line no-console
 		console.error(`[${now}]: ${prefix}::`, ...arguments);
